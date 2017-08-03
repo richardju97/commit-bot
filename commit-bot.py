@@ -7,19 +7,21 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 s = BlockingScheduler()
 
-def write():
+d = datetime.datetime(2017, 8, 3, 1, 16, 00)
+
+def write(d):
     file = open("myfile.txt", 'a')
     file.write("Commit on " + str(datetime.datetime.now()))
     file.write("\n")
     file.close()
 
-d = datetime.datetime(2017, 8, 3, 00, 16, 00)
-s.add_job(write, 'date', run_date=d)
+#    d += datetime.timedelta(seconds=10) # for testing/debugging
+    d += datetime.timedelta(days=1)
+    s.add_job(write, 'date', run_date=d, args=[d])
+
+s.add_job(write, 'date', run_date=d, args=[d])
 
 #print(datetime.datetime.now())
-
-d += datetime.timedelta(seconds=10)
-s.add_job(write, 'date', run_date=d)
 
 #print(subprocess.check_output(['ls', '-l']))
 
