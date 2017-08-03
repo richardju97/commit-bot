@@ -7,13 +7,18 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 s = BlockingScheduler()
 
-d = datetime.datetime(2017, 8, 3, 1, 16, 00)
+d = datetime.datetime(2017, 8, 3, 1, 26, 20)
 
 def write(d):
     file = open("myfile.txt", 'a')
-    file.write("Commit on " + str(datetime.datetime.now()))
+    n = str(datetime.datetime.now())
+    file.write("Commit on " + n)
     file.write("\n")
     file.close()
+    subprocess.check_output(['git', 'add', 'myfile.txt'])
+    msg = "Commit from Commit Bot" + n
+    subprocess.check_output(['git', 'commit', '-m', msg])
+    subprocess.check_output(['git', 'push', 'origin', 'master'])
 
 #    d += datetime.timedelta(seconds=10) # for testing/debugging
     d += datetime.timedelta(days=1)
