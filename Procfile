@@ -1,1 +1,1 @@
-web: python commit-bot.py
+worker: python commit-bot.py
