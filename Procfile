@@ -1,1 +1,1 @@
-worker: python commit-bot.py
+clock: python commit-bot.py
