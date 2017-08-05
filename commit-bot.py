@@ -13,7 +13,7 @@ app.run(environ.get('PORT'))
 
 s = BlockingScheduler()
 
-d = datetime.datetime(2017, 8, 5, 3, 45, 00)
+d = datetime.datetime(2017, 8, 5, 3, 50, 00)
 
 def write(d):
     file = open("myfile.txt", 'a')
