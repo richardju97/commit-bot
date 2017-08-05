@@ -27,7 +27,8 @@ def write(d):
     subprocess.check_output(['git', 'push', 'origin', 'master'])
 
 #    d += datetime.timedelta(seconds=10) # for testing/debugging
-    d += datetime.timedelta(days=1)
+#    d += datetime.timedelta(days=1)
+    d += datetime.timedelta(minutes=1)
     s.add_job(write, 'date', run_date=d, args=[d])
 
 s.add_job(write, 'date', run_date=d, args=[d])
