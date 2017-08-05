@@ -7,7 +7,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 s = BlockingScheduler()
 
-d = datetime.datetime(2017, 8, 3, 1, 26, 20)
+d = datetime.datetime(2017, 8, 4, 20, 30, 00)
 
 def write(d):
     file = open("myfile.txt", 'a')
