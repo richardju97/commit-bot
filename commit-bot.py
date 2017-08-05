@@ -5,15 +5,15 @@ import datetime
 #from datetime import date
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-from os import environ
-from flask import Flask
-
-app = Flask(__name__)
-app.run(environ.get('PORT'))
+#from os import environ
+#from flask import Flask
+#
+#app = Flask(__name__)
+#app.run(environ.get('PORT'))
 
 s = BlockingScheduler()
 
-d = datetime.datetime(2017, 8, 5, 3, 55, 00)
+d = datetime.datetime(2017, 8, 5, 4, 52, 00)
 
 def write(d):
     file = open("myfile.txt", 'a')
