@@ -22,7 +22,7 @@ def write(d):
     file.write("\n")
     file.close()
     subprocess.check_output(['git', 'add', 'myfile.txt'])
-    msg = "Commit from Commit Bot" + n
+    msg = "Commit from Commit Bot on " + n
     subprocess.check_output(['git', 'commit', '-m', msg])
     subprocess.check_output(['git', 'push', 'origin', 'master'])
 
